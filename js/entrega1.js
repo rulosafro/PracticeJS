@@ -75,20 +75,20 @@ alert("Tu frecuencia cardiaca máxina es de " + FC + " a la hora de correr tu co
 // ! INTENTO POR CONTINUAR + ADELANTE
 
 // * Objeto o Class para la persona
-// class Persona {
-//     constructor(nombre,peso,sexo,anio){
-//         this.nombre = nombre
-//         this.peso = peso
-//         this.sexo = sexo
-//         this.anio = anio
-//     }
-//     mostrar() {
-//         console.log(this.Persona);
-//     }
-// }
-// const persona1 = new Persona(prompt("Cual es su nombre"),prompt("Cuanto pesa actualmente"),prompt("Se identifica como hombre o mujer"), prompt("Año de nacimiento?"))
-// persona1.mostrar
-// console.log(persona1);
+class Persona {
+    constructor(nombre,peso,sexo,anio){
+        this.nombre = nombre
+        this.peso = peso
+        this.sexo = sexo
+        this.anio = anio
+    }
+    mostrar() {
+        console.log(this.Persona);
+    }
+}
+const persona1 = new Persona(prompt("Cual es su nombre"),prompt("Cuanto pesa actualmente"),prompt("Se identifica como hombre o mujer"), prompt("Año de nacimiento?"))
+persona1.mostrar
+console.log(persona1);
 
 
 

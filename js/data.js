@@ -1,5 +1,5 @@
-class Guitarras = {
-    constructor(marca, nombre, precio, imgSrc, tipo, descripcion, color) {
+class Guitarras {
+    constructor(marca, nombre, precio, imgSrc, tipo, color) {
         this.marca = marca
         this.nombre = nombre
         this.precio = precio

@@ -5,47 +5,43 @@
 var nombre;
 var genM;
 var carroDeCompra = [];
-
-function nombrePersona() {
-  var nombre = prompt("\xBFCual es su nombre?");
-  alert(nombre + " un gusto verte por aqu\xED. Veamos que estas buscando en GuitarWorld");
+/*
+function nombrePersona () {
+    let nombre = prompt(`¿Cual es su nombre?`)
+    alert(nombre + ` un gusto verte por aquí. Veamos que estas buscando en GuitarWorld`)
 }
 
-var genMusic = function genMusic() {
-  var genM = prompt("\xBFCual es tu genero musical favorito? \n Rock \n Jazz \n Rap \n Blues");
-  return genM;
-}; // Desarrollo
+const genMusic = () => {
+    let genM = prompt(`¿Cual es tu genero musical favorito? \n Rock \n Jazz \n Rap \n Blues`)
+    return(genM)
+}
 
-
-alert("Bienvenido a GuitarWorld, ac\xE1 podras comprar todo lo necesario para tu viaje musical");
-nombrePersona();
-
+// Desarrollo
+alert(`Bienvenido a GuitarWorld, acá podras comprar todo lo necesario para tu viaje musical`)
+nombrePersona()
 while (genM != "rock" && genM != "jazz" && genM != "rap" && genM != "blues") {
-  genM = prompt("Elige uno dentro de las opciones \n Rock \n Jazz \n Rap \n Blues").toLowerCase();
-
-  switch (genM) {
-    case "rock":
-      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
-      break;
-
-    case "jazz":
-      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
-      break;
-
-    case "rap":
-      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
-      break;
-
-    case "blues":
-      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
-      break;
-
-    default:
-      alert("Parece que no conozco todavia este genero.");
-      console.log("Ingreso un valor incorrecto");
-      break;
-  }
+    genM = prompt("Elige uno dentro de las opciones \n Rock \n Jazz \n Rap \n Blues").toLowerCase()
+    switch (genM) {
+        case "rock":
+            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
+            break;
+        case "jazz":
+            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
+            break;
+        case "rap":
+            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
+            break;
+        case "blues":
+            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
+            break;
+        default:
+            alert(`Parece que no conozco todavia este genero.`)
+            console.log(`Ingreso un valor incorrecto`);
+            break;
+    }
 }
+
+*/
 
 var printStock = function printStock() {
   var stock1 = "";
@@ -61,12 +57,12 @@ var elegir = prompt("Acá esta el stock actual, elige un numero de la lista \n" 
 
 var verificadorDeProducto = function verificadorDeProducto() {
   while (isNaN(elegir)) {
-    alert("Por favor ingresa un numero");
+    alert("Contenedor Vacio");
     elegir = prompt(printStock());
   }
 
   while (elegir == "") {
-    alert("Lo Sentimos. No se permiten campos vacios. Por favor ingrese un numero");
+    alert("Contenedor Vacio");
     elegir = prompt(printStock());
   }
 };
@@ -74,11 +70,6 @@ var verificadorDeProducto = function verificadorDeProducto() {
 verificadorDeProducto();
 carroDeCompra.push(dataGuitarras[elegir - 1].marca + " " + dataGuitarras[elegir - 1].nombre + " " + dataGuitarras[elegir - 1].precio);
 console.log(carroDeCompra);
-alert(carroDeCompra); // alert(`En el carro actualmente hay ` + carroDeCompra);
-// for (let i = 0; i < carroDeCompra.length; i++) {
-//     const plataTotal = carroDeCompra.precio.reduce();
-// }
-
 var iteracion;
 
 while (iteracion != "si" || iteracion != "no") {
@@ -97,7 +88,8 @@ while (iteracion != "si" || iteracion != "no") {
     case "no":
       console.log("salida de iteracion");
       alert("Okey, continuemos");
-      alert("En el carro actualemente hay \n" + plataTotal);
+      alert(carroDeCompra2); // alert("En el carro actualemente hay \n" + carroDeCompra2)
+
       break;
 
     default:
@@ -107,11 +99,13 @@ while (iteracion != "si" || iteracion != "no") {
   }
 }
 
-alert("Okey, continuemos"); // for (let i = 0; i < carroDeCompra.length; i++) {
-//     const plataTotal = carroDeCompra.precio.reduce();
-//     return plataTotal
-// }
-// for (let i = 0; i < carroDeCompra.length; i++) {
-//     const plataTotal = carroDeCompra.precio.reduce();
-// }
-// console.log(plataTotal);
+var carroDeCompra2 = carroDeCompra.precio.reduce(function (previousValue, currentValue) {
+  return previousValue + currentValue;
+}, initialValue); // console.log(carroDeCompra);
+
+alert(carroDeCompra.precio.reduce());
+alert("En el carro actualmente hay " + carroDeCompra);
+
+for (var i = 0; i < carroDeCompra.length; i++) {
+  var plataTotal = carroDeCompra.precio.reduce();
+}

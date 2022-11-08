@@ -5,7 +5,6 @@ let nombre
 let genM
 let carroDeCompra = []
 
-/*
 function nombrePersona () {
     let nombre = prompt(`¿Cual es su nombre?`)
     alert(nombre + ` un gusto verte por aquí. Veamos que estas buscando en GuitarWorld`)
@@ -40,8 +39,6 @@ while (genM != "rock" && genM != "jazz" && genM != "rap" && genM != "blues") {
             break;
     }
 }
-
-*/
 
 const printStock = () => {
     let stock1 = ""

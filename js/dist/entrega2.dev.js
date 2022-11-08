@@ -5,43 +5,47 @@
 var nombre;
 var genM;
 var carroDeCompra = [];
-/*
-function nombrePersona () {
-    let nombre = prompt(`¿Cual es su nombre?`)
-    alert(nombre + ` un gusto verte por aquí. Veamos que estas buscando en GuitarWorld`)
+
+function nombrePersona() {
+  var nombre = prompt("\xBFCual es su nombre?");
+  alert(nombre + " un gusto verte por aqu\xED. Veamos que estas buscando en GuitarWorld");
 }
 
-const genMusic = () => {
-    let genM = prompt(`¿Cual es tu genero musical favorito? \n Rock \n Jazz \n Rap \n Blues`)
-    return(genM)
-}
+var genMusic = function genMusic() {
+  var genM = prompt("\xBFCual es tu genero musical favorito? \n Rock \n Jazz \n Rap \n Blues");
+  return genM;
+}; // Desarrollo
 
-// Desarrollo
-alert(`Bienvenido a GuitarWorld, acá podras comprar todo lo necesario para tu viaje musical`)
-nombrePersona()
+
+alert("Bienvenido a GuitarWorld, ac\xE1 podras comprar todo lo necesario para tu viaje musical");
+nombrePersona();
+
 while (genM != "rock" && genM != "jazz" && genM != "rap" && genM != "blues") {
-    genM = prompt("Elige uno dentro de las opciones \n Rock \n Jazz \n Rap \n Blues").toLowerCase()
-    switch (genM) {
-        case "rock":
-            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
-            break;
-        case "jazz":
-            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
-            break;
-        case "rap":
-            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
-            break;
-        case "blues":
-            alert(`Alto fanatico de ${genM} veamos que hay en stock que te pueda servir`)
-            break;
-        default:
-            alert(`Parece que no conozco todavia este genero.`)
-            console.log(`Ingreso un valor incorrecto`);
-            break;
-    }
-}
+  genM = prompt("Elige uno dentro de las opciones \n Rock \n Jazz \n Rap \n Blues").toLowerCase();
 
-*/
+  switch (genM) {
+    case "rock":
+      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
+      break;
+
+    case "jazz":
+      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
+      break;
+
+    case "rap":
+      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
+      break;
+
+    case "blues":
+      alert("Alto fanatico de ".concat(genM, " veamos que hay en stock que te pueda servir"));
+      break;
+
+    default:
+      alert("Parece que no conozco todavia este genero.");
+      console.log("Ingreso un valor incorrecto");
+      break;
+  }
+}
 
 var printStock = function printStock() {
   var stock1 = "";

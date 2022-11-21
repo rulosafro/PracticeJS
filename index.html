@@ -7,28 +7,76 @@
         <title>GuitarWorld</title>
         <link rel="icon" type="image/png" href="./image/guitar.png" sizes="16x16">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- Descripción en metadatos -->
+        <meta name="title" content="Tienda de Guitarras">
+        <meta name="description" content="Bienvenido a la mejor tienda de Guitarras del mundo"/>
+        <meta name="keywords" content="guitarras,musica,tienda,acustica,electrica"/>
+        <meta name="author" content="RulosAfro" />
+        <!-- Meta para redes sociales -->
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="rulosafro.github.io/PracticeJS/">
+        <meta property="og:title" content="GuitarWorld">
+        <meta property="og:description" content="Bienvenido a la mejor tienda de Guitarras del mundo">
+        <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="rulosafro.github.io/besttimetravel2/">
+        <meta property="twitter:title" content="GuitarWorld">
+        <meta property="twitter:description" content="Bienvenido a la mejor tienda de Guitarras del mundo">
+        <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
     </head>
     <body>
+        <nav>
+            <div>
+                <a href="" id="logo">GuitarWorld</a>
+            </div>
+            <div class="">
+                <ul>
+                    <li><a href="">Productos</a></li>
+                    <li><a href="">Información</a></li>
+                    <li><a href="">Contacto</a></li>
+                  </ul>
+            </div>
+        </nav>
+
         <header>
-            <h1>Tienda de Guitarras - 2da Entrega</h1>
-            <h2 class="rap">Bienvenidos a GuitarWorld</h2> 
+            <img class="imgBanner" src="./image/img1.jpg" alt="">
         </header>
         
         <main>
-            <h2>Tienda de guitarras - trabajo de JS</h2>
-            <div id="card">
-
-            </div>
-            <p>El objeto de la entrega final todavia no lo decido, en esta entrega simulare una tienda de guitarras</p>
+            <h1 class="">Bienvenido a GuitarWorld, la tienda del mundo de la guitarras</h2>
         </main>
-        
+
+        <section class="containerAll">
+            <aside>
+                <div class="menu">
+                    <div class="searchBox">
+                        <input type="text" name="searchBar" id="searchBar">
+                        <button id="searchButton" class="searchButton" title="Buscar"> &#128270; </button>
+                    </div>
+                    <p>hola</p>
+                </div>
+            </aside>
+
+            <div class="containerA">
+                <div id="gridProductos">
+                    <!-- Productos -->
+                </div>
+            </div>
+        </section>
+
         <footer>
-            <p>2da PreEntrega Curso Javascript | Javier Ramírez - 7/11/2022 ;)</p>
+            <p>3ra Entrega Curso Javascript Coderhouse | Javier Ramírez - 20/11/2022 ;)</p>
         </footer>
 
         <!-- Scripts -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="./js/sweetAlert1"></script> -->
         <script src="./js/data.js"></script>
-        <!-- <script src="./js/entrega1.js"></script> -->
-        <script src="./js/entrega2.js"></script>
+        <script src="./js/main.js"></script>
+
+
     </body>
 </html>

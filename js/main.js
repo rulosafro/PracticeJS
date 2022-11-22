@@ -1,24 +1,36 @@
+//* Array y let
+let carritoDeCompra = []
+
 //* Condicionalaasda
   if (localStorage.getItem('carrito')) {
-      carrito = JSON.parse(localStorage.getItem('carrito'))
+    carritoDeCompra = JSON.parse(localStorage.getItem('carrito'))
   } else {
-      carrito = []
+      carritoDeCompra = []
   }
+
+  console.log(carritoDeCompra);
 
 //* Declaraciones
 
 
-//* Array
-let carritoDeCompra = []
 
 //* Query de Elementos 
 const searchBar = document.querySelector('#searchBar')
 const searchButton = document.querySelector('#searchButton')
 const gridProductos = document.querySelector('#gridProductos')
-const cardButton = document.querySelectorAll('.cardButton')
 
 //* Funciones
-const renderizarGuitarras = () => {
+const agregarAlCarrito = (e) => {
+    const idProductoElegido = e.target.getAttribute('data-id')
+    const productoElegido = dataGuitarras.find((guitarra) => guitarra.id == idProductoElegido)
+    carritoDeCompra.push(productoElegido)
+    console.log(carritoDeCompra);
+    localStorage.setItem('carrito', JSON.stringify(carritoDeCompra))
+
+    // console.log(carritoDeCompra);
+}
+
+const renderizarProductos = () => {
     dataGuitarras.forEach((guitarra) => {
         const nuevaCard = document.createElement('div') 
         nuevaCard.className = 'card'
@@ -27,16 +39,14 @@ const renderizarGuitarras = () => {
             <p class="cardInfo"> ${guitarra.nombre}</p>
             <img src="${guitarra.imgSrc}" class="cardImg">
             <span class="cardPrice"> $${guitarra.precio} </span>
-            <button class="cardButton" data-id="${guitarra.id}"> <p> Agregar al Carrito </p> </button>
+            <button class="cardButton" data-id="${guitarra.id}"> <p data-id="${guitarra.id}"> Agregar al Carrito </p> </button>
         `
         gridProductos.append(nuevaCard)
     })
-
-    const buttonsCTA = document.querySelectorAll('.buttonCTA')
-    buttonsCTA.forEach((button) => {
-        button.addEventListener('click', agregarProductoAlCarrito)
-    })
-}
+    const cardButton = document.querySelectorAll('.cardButton')
+    cardButton.forEach((button) => {
+        button.addEventListener('click', agregarAlCarrito)
+})}
 
 
 // Buscador
@@ -49,14 +59,5 @@ searchButton.addEventListener('click', () => {
     console.log(inputChange.value)
 })
 
-// Agregar al carrito
-
-cardButton.forEach((button) => {
-    button.addEventListener('click', () => {
-        console.log(e.target);
-    })
-})
-
 //*Ejecuciones
-renderizarGuitarras()
-
+renderizarProductos()

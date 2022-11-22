@@ -134,6 +134,13 @@ section {
 aside {
     grid-area: "aside";
 }
+.menu p {
+    padding-top: 20px;
+}
+
+#searchBar {
+    color: black;
+}
 
 .containerA {
     grid-area: "containerA";
@@ -154,6 +161,7 @@ aside {
     border: 1px solid grey;
     border-radius: 20px;
     background-color: white;
+    opacity: 0.9;
 }
 
 
@@ -168,7 +176,7 @@ aside {
 
 .cardInfo {
     display: block;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 10px;
     color: black;
@@ -182,11 +190,47 @@ aside {
     margin-bottom: 10px;
     color: black;
     text-align: center;
-    
+    font-weight: 700;
 }
 
+
 .cardImg {
-    width: 80%;
+    max-width: 80%;
+    height: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.cardButton {
+    color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: rgb(252, 237, 33);
+    align-items: center;
+}
+
+.cardButton:hover {
+    background-color: gray;
+    transition: all 0.5s;
+}
+
+button p {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: black;
+    text-align: center;
+    font-weight: 400;
+    align-self: center;
+    font-size: small;
+    margin: 10px;
+    
 }
 
 footer {

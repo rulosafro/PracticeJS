@@ -1,22 +1,23 @@
-// Condicionalaasda
+//* Condicionalaasda
   if (localStorage.getItem('carrito')) {
       carrito = JSON.parse(localStorage.getItem('carrito'))
   } else {
       carrito = []
   }
 
-// Declaraciones
+//* Declaraciones
 
 
-// Array
+//* Array
 let carritoDeCompra = []
 
-// Query de Elementos 
-const searchBarInput = document.querySelector('#searchBarInput')
-const searchBarButton = document.querySelector('#searchBarButton')
+//* Query de Elementos 
+const searchBar = document.querySelector('#searchBar')
+const searchButton = document.querySelector('#searchButton')
 const gridProductos = document.querySelector('#gridProductos')
+const cardButton = document.querySelectorAll('.cardButton')
 
-// * Cards
+//* Funciones
 const renderizarGuitarras = () => {
     dataGuitarras.forEach((guitarra) => {
         const nuevaCard = document.createElement('div') 
@@ -26,7 +27,7 @@ const renderizarGuitarras = () => {
             <p class="cardInfo"> ${guitarra.nombre}</p>
             <img src="${guitarra.imgSrc}" class="cardImg">
             <span class="cardPrice"> $${guitarra.precio} </span>
-            <button class="buttonCTA" data-id="${guitarra.id}"> Agregar al Carrito </button>
+            <button class="cardButton" data-id="${guitarra.id}"> <p> Agregar al Carrito </p> </button>
         `
         gridProductos.append(nuevaCard)
     })
@@ -37,5 +38,25 @@ const renderizarGuitarras = () => {
     })
 }
 
-//Ejecuciones
+
+// Buscador
+const inputChange = document.querySelector('#searchBar')
+inputChange.addEventListener('çhange', (e) => {
+    console.log(e.value);
+})
+const searchButtonJS = document.querySelector('#searchButton')
+searchButton.addEventListener('click', () => {
+    console.log(inputChange.value)
+})
+
+// Agregar al carrito
+
+cardButton.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(e.target);
+    })
+})
+
+//*Ejecuciones
 renderizarGuitarras()
+

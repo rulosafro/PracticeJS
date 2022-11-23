@@ -2,22 +2,21 @@
 let carritoDeCompra = []
 
 //* Condicionalaasda
-  if (localStorage.getItem('carrito')) {
-    carritoDeCompra = JSON.parse(localStorage.getItem('carrito'))
-  } else {
-      carritoDeCompra = []
-  }
-
-  console.log(carritoDeCompra);
-
-//* Declaraciones
+if (localStorage.getItem('carrito')) {
+carritoDeCompra = JSON.parse(localStorage.getItem('carrito'))
+} else {
+    carritoDeCompra = []
+}
 
 
+
+let numberCart = carritoDeCompra.length
 
 //* Query de Elementos 
 const searchBar = document.querySelector('#searchBar')
 const searchButton = document.querySelector('#searchButton')
 const gridProductos = document.querySelector('#gridProductos')
+const carritoNumero = document.querySelector('#numberCart')
 
 //* Funciones
 const agregarAlCarrito = (e) => {
@@ -26,8 +25,6 @@ const agregarAlCarrito = (e) => {
     carritoDeCompra.push(productoElegido)
     console.log(carritoDeCompra);
     localStorage.setItem('carrito', JSON.stringify(carritoDeCompra))
-
-    // console.log(carritoDeCompra);
 }
 
 const renderizarProductos = () => {
@@ -48,6 +45,13 @@ const renderizarProductos = () => {
         button.addEventListener('click', agregarAlCarrito)
 })}
 
+const renderizarCarrito = () => {
+    const nuevoNumber = document.createElement('p')
+    nuevoNumber.className = "numberPNG"
+    nuevoNumber.innerText = `${numberCart}`
+    carritoNumero.append(nuevoNumber)
+    return nuevoNumber
+}
 
 // Buscador
 const inputChange = document.querySelector('#searchBar')
@@ -61,3 +65,4 @@ searchButton.addEventListener('click', () => {
 
 //*Ejecuciones
 renderizarProductos()
+renderizarCarrito()

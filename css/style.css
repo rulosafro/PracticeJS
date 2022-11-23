@@ -77,6 +77,7 @@ nav div ul {
     flex-flow: row;
     list-style-type: none;
     justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -84,6 +85,8 @@ nav div ul {
 nav div ul li{
     padding-left: 30px;
     font-weight: 700;
+    align-items: center;
+
 }
 
 nav div ul li a:hover {
@@ -91,6 +94,20 @@ nav div ul li a:hover {
     color: rgb(252, 237, 33);
     border-width: 3px;
     transition: all;
+}
+
+.cartPNG {
+    height: auto;
+    width: 30px;
+    align-self: top;
+}
+
+#boxCart {
+    display: flex;
+    flex-flow: row;
+    color: white;
+    align-items: center;
+    justify-items: center;
 }
 
 #logo {

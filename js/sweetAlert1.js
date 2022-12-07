@@ -1,9 +1,9 @@
-Swal.fire({
-    title: 'Bienvenido',
-    text: 'Estas entrando el mundo de las guitarras, un nuevo ecommerce musical',
-    icon: '',
-    confirmButtonText: 'Buenardo'
-})
+// Swal.fire({
+//     title: 'Bienvenido',
+//     text: 'Estas entrando el mundo de las guitarras, un nuevo ecommerce musical',
+//     icon: '',
+//     confirmButtonText: 'Buenardo'
+// })
 
 const realizarCompra = document.querySelector('#boxCart')
     searchButton.addEventListener('click', () => {

@@ -26,17 +26,20 @@
         <meta property="twitter:title" content="GuitarWorld">
         <meta property="twitter:description" content="Bienvenido a la mejor tienda de Guitarras del mundo">
         <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+        <!-- Toastify  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     </head>
     <body>
+        <!-- Arreglar Carrito -->
         <nav>
             <div>
-                <a href="" id="logo">GuitarWorld</a>
+                <a href="./index.html" id="logo">GuitarWorld</a>
             </div>
             <div class="">
                 <ul>
-                    <li><a href="">Productos</a></li>
-                    <li><a href="">Información</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="./index.html">Productos</a></li>
+                    <li><a href="./pages/gps.html">Información</a></li>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
                     <li><button id="boxCart"> <img src="./image/Cart.png" class="cartPNG" ><p id="numberCart"></p></button> </li>
                   </ul>
             </div>
@@ -63,17 +66,33 @@
 
             <div class="containerA">
                 <div id="gridProductos">
-                    <!-- Productos -->
+                    <!-- Guitarras -->
                 </div>
             </div>
         </section>
 
+        <div class="contenedor">
+            <div class="carrito">
+                <h2>Carrito</h2>
+                <button id="carritoCerrar"></button>
+                <div id="carritoContenedor">
+
+                </div>
+                <p class="precioProducto">Precio total: $ <span id="precioTotal">0</span></p>
+                <button id="vaciarCarrito" class="botonAgregar">Vaciar Carrito</button>
+            </div>
+
+        </div>
+
         <footer>
-            <p>3ra Entrega Curso Javascript Coderhouse | Javier Ramírez - 20/11/2022 ;)</p>
+            <p>4ta Entrega Curso Javascript Coderhouse | Javier Ramírez - 20/11/2022 ;)</p>
         </footer>
 
-        <!-- Scripts -->
+        <!-- Librerias -->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+        <!-- Scripts -->
         <script src="./js/sweetAlert1.js"></script>
         <script src="./js/data.js"></script>
         <script src="./js/main.js"></script>

@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "marca": "Greg Bennett",
+        "nombre": "Interceptor IC 1",
+        "precio": 299990,
+        "imgSrc": "../image/guitarStock/IC-1.png\"",
+        "tipo": "Eléctrica",
+        "color": "Negro",
+        "link": "https://www.casamarilla.cl/guitarra-electrica-greg-bennett-interceptor-ic-1/p"
+    },
+    {
+        "id": 2,
+        "marca": "Squier",
+        "nombre": "Classic Vibe 70' Stratocaster",
+        "precio": 599990,
+        "imgSrc": "../image/guitarStock/ClassicVibe70.webp",
+        "tipo": "Eléctrica",
+        "color": "Negro",
+        "link": "https://www.casamarilla.cl/guitarra-electrica-squier-classic-vibe-70--stratocaster/p?skuId=1969"
+    },
+    {
+        "id": 3,
+        "marca": "Fender",
+        "nombre": "Redondo Player Slate Satin",
+        "precio": 349990,
+        "imgSrc": "../image/guitarStock/Redondo_Player_Slate_Satin.webp",
+        "tipo": "Electroacustica",
+        "color": "Gris",
+        "link": "https://www.casamarilla.cl/guitarra-electroacustica-fender-redondo-player-slate-satin/p"
+    },
+    {
+        "id": 4,
+        "marca": "Cort",
+        "nombre": "CR250-VB Les Paul HH Jatoba",
+        "precio": 499990,
+        "imgSrc": "../image/guitarStock/CR250-VB_Les_Paul_HH.webp",
+        "tipo": "Eléctrica",
+        "color": "Negra",
+        "link": "https://www.casamarilla.cl/guitarra-electrica-cort-cr250-vb-les-paul-hh-jatoba-/p"
+    },
+    {
+        "id": 5,
+        "marca": "Cort",
+        "nombre": "CR200 Les Paul BK",
+        "precio": 399990,
+        "imgSrc": "../image/guitarStock/CR200_Les_Paul_BK.png",
+        "tipo": "Eléctrica",
+        "color": "Negro",
+        "link": "https://www.casamarilla.cl/guitarra-electrica-cort-cr200-les-paul-bk/p"
+    },
+    {
+        "id": 6,
+        "marca": "Alhambra",
+        "nombre": "7FC Concierto",
+        "precio": 1449990,
+        "imgSrc": "../image/guitarStock/7FC.webp",
+        "tipo": "Acustica",
+        "color": "Madera",
+        "link": "https://www.casamarilla.cl/guitarra-clasica-alhambra-7-fc-concierto/p"
+    },
+    {
+        "id": 7,
+        "marca": "Palmer",
+        "nombre": "PC13 CEQ Standard",
+        "precio": 159990,
+        "imgSrc": "../image/guitarStock/PC13_CEQ_Standard.png",
+        "tipo": "Electroacustica",
+        "color": "Amarilla",
+        "link": "https://www.casamarilla.cl/guitarra-electroacustica-palmer-pc-13-ceq-standard/p?skuId=581"
+    },
+    {
+        "id": 8,
+        "marca": "Palmer",
+        "nombre": "PF23 CEQ Marquis",
+        "precio": 189990,
+        "imgSrc": "../image/guitarStock/PF23.png",
+        "tipo": "Electroacustica",
+        "color": "Roja",
+        "link": "https://www.casamarilla.cl/guitarra-electroacustica-palmer-pf-23-ceq-marquis/p?skuId=589"
+    }
+]

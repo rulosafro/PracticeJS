@@ -1,34 +1,21 @@
-//* Array y let
-let carritoDeCompra = []
-let post = []
-let numberCart = carritoDeCompra.length
+//* Arrays
+let dataGuitarras = []
+let carritoDeCompra = JSON.parse(localStorage.getItem('carrito')) || []
 
 //* Query de Elementos 
 const carritoNumero = document.querySelector('#numberCart')
 const searchBar = document.querySelector('#searchBar')
 const searchButton = document.querySelector('#searchButton')
 const gridProductos = document.querySelector('#gridProductos')
-// const numCarrito
-
-//* Condicionales 
-//! Posible Cambio
-if (localStorage.getItem('carrito')) {
-carritoDeCompra = JSON.parse(localStorage.getItem('carrito'))
-} else {
-    carritoDeCompra = []
-}
+const carritoContendero = document.querySelector('#carritoContenedor')
+const botonVaciar = document.querySelector('#vaciarCarrito')
+const contadorCarrito = document.querySelector('#contadorCarrito')
+const precioTotal = document.querySelector('#precioTotal')
+const cantidadTotal = document.querySelector('#cantidadTotal')
+const cantidad = document.querySelector('#cantidad')
+const boton = document.querySelector(`.cardButton`)
 
 //* Funciones
-const agregarAlCarrito = (e) => {
-    const clickProductoElegido = e.target.getAttribute('data-id')
-    const productoElegido = dataGuitarras.find((guitarra) => guitarra.id == clickProductoElegido)
-    carritoDeCompra.push(productoElegido)
-    localStorage.setItem('carrito', JSON.stringify(carritoDeCompra))
-    // imprimirCarrito()
-    //console.log(carritoDeCompra);
-}
-
-
 const renderizarProductos = () => {
     dataGuitarras.forEach((guitarra) => {
         const nuevaCard = document.createElement('div') 
@@ -40,35 +27,61 @@ const renderizarProductos = () => {
             <p class="cardPrice"> $${guitarra.precio} </p>
             <button class="cardButton" data-id="${guitarra.id}">  Agregar al Carrito </button>
         `
-        gridProductos.appendChild(nuevaCard)
+        gridProductos.append(nuevaCard)
     })
+
+    contadorCarrito.innerText = carritoDeCompra.length
     const cardButtons = document.querySelectorAll('.cardButton')
     cardButtons.forEach((button) => {
         button.addEventListener('click', agregarAlCarrito)
 })}
 
-const renderizarCarrito = () => {
-    const nuevoNumber = document.createElement('p')
-    nuevoNumber.className = "numberPNG"
-    nuevoNumber.innerText = `${numberCart}`
-    carritoNumero.append(nuevoNumber)
-    return nuevoNumber
+const agregarAlCarrito = (guitarraSelect) => {
+    const idGuitarra = guitarraSelect.target.getAttribute('data-id')
+    const elegidaGuitarra = dataGuitarras.find((guitarra) => guitarra.id == idGuitarra)
+    if (!carritoDeCompra.some((guitarra)=> guitarra.id == idGuitarra)) {
+        carritoDeCompra.push({
+            ...elegidaGuitarra
+        })
+    } else {
+        const seleccionGuitarra = carritoDeCompra.find((guitarra) => guitarra.id == idGuitarra)
+        seleccionGuitarra.cantidad++
+    }
+    actualizarCarrito()
+    console.log(carritoDeCompra);
 }
 
-//! Fetch
-renderizarPost = () => {
-	posts.forEach((post) => {
-		const newItemList = document.createElement('li')
-		newItemList.textContent = post.title
-		postContainer.append(newItemList)
-	})
+const actualizarCarrito = () => {
+    carritoContendero.innerHTML = ""
+    carritoDeCompra.forEach((guitarra) => {
+        const nuevaCardCarrito = document.createElement('div') 
+        nuevaCardCarrito.className = 'guitarraEnCarrito'
+        nuevaCardCarrito.innerHTML = `
+        <h2 class="cardTitleCarrito"> ${guitarra.marca} </h2>
+        <p class="cardInfoCarrito"> ${guitarra.nombre}</p>
+        <p class="ca; <span id="cantidad"> ${guitarra.cantidad} </span> </p>
+        <button onclick="eliminarDelCarrito(${guitarra.id})" class="bottonEliminar"> Eliminar</button>
+        `
+        carritoContendero.appendChild(nuevaCardCarrito)
+    });
+    
+    
+    localStorage.setItem('carrito', JSON.stringify(carritoDeCompra))
+    contadorCarrito.innerText = carritoDeCompra.length
+    precioTotal.innerText = carritoDeCompra.reduce((acc, guitarra) => acc + guitarra.precio,0)
 }
-fetch ('./') //recibira una promesa pendiente
-	.then((promise) => response.json()) //Escucha la respuesta de la primera promesa y activa el método json
-	.then((data) => {
-		console.log(data)
-		renderizarPost()
-	})
+
+const eliminarDelCarrito = (eliminarGuitarra) => {
+    const itemA = carritoDeCompra.find((guitarra) => guitarra.id === eliminarGuitarra)
+    const indice = carritoDeCompra.indexOf(itemA)
+    carritoDeCompra.splice(indice,1)
+    actualizarCarrito()
+}
+
+botonVaciar.addEventListener('click', () => {
+    carritoDeCompra.length = 0
+    actualizarCarrito()
+})
 
 //! Buscador
 const inputChange = document.querySelector('#searchBar')
@@ -80,6 +93,16 @@ searchButton.addEventListener('click', () => {
     console.log(inputChange.value)
 })
 
+// Fetch
+const traerGuitarras = async () => {
+    const response = await fetch ('../json/data.json') 
+    const data = await response.json()
+    dataGuitarras = data
+    renderizarProductos()
+}
+
 //! Ejecuciones
-renderizarProductos()
-renderizarCarrito()
+traerGuitarras()
+actualizarCarrito()
+
+//! Filtros 

@@ -1,0 +1,17 @@
+/* Error: Expected spaces, was tabs.
+ *    ,
+ * 44 |     text-decoration: none
+ *    | ^^^^
+ *    '
+ *   sass\main.sass 44:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected spaces, was tabs.\a    \2577 \a 44 \2502      text-decoration: none\d\a    \2502  ^^^^\a    \2575 \a   sass\\main.sass 44:1  root stylesheet";
+}

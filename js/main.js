@@ -9,6 +9,7 @@ const searchButton = document.querySelector('#searchButton')
 const gridProductos = document.querySelector('#gridProductos')
 const carritoContendero = document.querySelector('#carritoContenedor')
 const botonVaciar = document.querySelector('#vaciarCarrito')
+const botonComprar = document.querySelector('#realizarCompra')
 const contadorCarrito = document.querySelector('#contadorCarrito')
 const precioTotal = document.querySelector('#precioTotal')
 const cantidadTotal = document.querySelector('#cantidadTotal')
@@ -47,8 +48,19 @@ const agregarAlCarrito = (guitarraSelect) => {
         const seleccionGuitarra = carritoDeCompra.find((guitarra) => guitarra.id == idGuitarra)
         seleccionGuitarra.cantidad++
     }
+
+    Toastify({
+        text: "Se ha cargado un producto al carrito :)",
+        duration: 2000,
+        close: true,
+        gravity: "top", 
+        position: "right",
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     actualizarCarrito()
-    console.log(carritoDeCompra);
+
 }
 
 const actualizarCarrito = () => {
@@ -57,10 +69,11 @@ const actualizarCarrito = () => {
         const nuevaCardCarrito = document.createElement('div') 
         nuevaCardCarrito.className = 'guitarraEnCarrito'
         nuevaCardCarrito.innerHTML = `
-        <h2 class="cardTitleCarrito"> ${guitarra.marca} </h2>
-        <p class="cardInfoCarrito"> ${guitarra.nombre}</p>
-        <p class="ca; <span id="cantidad"> ${guitarra.cantidad} </span> </p>
-        <button onclick="eliminarDelCarrito(${guitarra.id})" class="bottonEliminar"> Eliminar</button>
+        <div class="ordenCarrito">
+        <h2 class="cardTitleCarrito"> ${guitarra.marca} - <span class="cardInfoCarrito"> ${guitarra.nombre}</span></h2>
+        <p class="cantidad"> <span id="cantidad">Precio: $${guitarra.precio} - Cantidad: ${guitarra.cantidad} </span></p> </div>
+        <div>        <button onclick="eliminarDelCarrito(${guitarra.id})" class="bottonEliminar"> Eliminar</button> </div>
+        </div>
         `
         carritoContendero.appendChild(nuevaCardCarrito)
     });
@@ -69,6 +82,7 @@ const actualizarCarrito = () => {
     localStorage.setItem('carrito', JSON.stringify(carritoDeCompra))
     contadorCarrito.innerText = carritoDeCompra.length
     precioTotal.innerText = carritoDeCompra.reduce((acc, guitarra) => acc + guitarra.precio,0)
+
 }
 
 const eliminarDelCarrito = (eliminarGuitarra) => {
@@ -81,16 +95,45 @@ const eliminarDelCarrito = (eliminarGuitarra) => {
 botonVaciar.addEventListener('click', () => {
     carritoDeCompra.length = 0
     actualizarCarrito()
+    Toastify({
+        text: "Se ha vaciado el carrito",
+        duration: 2000,
+        close: true,
+        gravity: "top", 
+        position: "right",
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function(){} // Callback after click
+      }).showToast();
 })
 
-//! Buscador
-const inputChange = document.querySelector('#searchBar')
-inputChange.addEventListener('çhange', (e) => {
-    console.log(e.value);
-})
-const searchButtonJS = document.querySelector('#searchButton')
-searchButton.addEventListener('click', () => {
-    console.log(inputChange.value)
+botonComprar.addEventListener('click', () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Quieres confirmar tu compra?',
+        text: "You won't be able to revert this!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Realizar compra',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Compra Realizada',
+            'Tu compra se ha realizado con exito',
+            'success'
+          )
+        } else (
+          result.dismiss === Swal.DismissReason.cancel
+        )
+      })
 })
 
 // Fetch
@@ -101,8 +144,21 @@ const traerGuitarras = async () => {
     renderizarProductos()
 }
 
-//! Ejecuciones
-traerGuitarras()
+// Ejecuciones
 actualizarCarrito()
+traerGuitarras()
+
+
 
 //! Filtros 
+
+//! Buscador
+const inputChange = document.querySelector('#searchBar')
+inputChange.addEventListener('çhange', (e) => {
+    console.log(e.value);
+})
+
+const searchButtonJS = document.querySelector('#searchButton')
+searchButton.addEventListener('click', () => {
+    console.log(inputChange.value)
+})

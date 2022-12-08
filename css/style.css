@@ -55,15 +55,25 @@ table {
 }
 
 /* ------------------------------------------------------------------------ */
+:root {
+    --rama1: rgb(252, 237, 33);
+    --rama2: aqua;
+    --rama3: aqua;
+    --ramawhite: white;
+    --ramablack: black;
+  }
+
+
+
 
 body { 
-    background-color: #000000;
-    color: white;
+    background-color: var(--ramablack);
+    color: var(--ramawhite);
     padding: 2rem;
 }
 
 nav {
-    color: white;
+    color: var(--ramawhite);
     display: flex;
     flex-flow: row;
     text-align: center;
@@ -89,33 +99,50 @@ nav div ul li{
 
 }
 
+nav div ul li button {
+    /* background-color: Transparent;
+    background-repeat:no-repeat; */
+    border: 2px solid var(--ramawhite);
+    border-radius: 15px;
+}
+
 nav div ul li a:hover {
     /* color: black; */
-    color: rgb(252, 237, 33);
+    color: var(--rama1);
     border-width: 3px;
     transition: all;
 }
 
-.cartPNG {
-    height: auto;
-    width: 30px;
-    align-self: top;
-}
-
-#boxCart {
+.boxCart {
     display: flex;
     flex-flow: row;
-    color: white;
+    color: var(--ramawhite);
     align-items: center;
     justify-items: center;
+    transition: all .3s;
+}
+
+.boxIMG{
+    height: auto;
+    width: 40px;
+    margin: 5px;
+    padding-right: 10px;
+}
+
+#contadorCarrito {
+    color: var(--ramablack);
+    font-size: large;
+    font-weight: 600;
+    padding-right: 10px;
+
 }
 
 #logo {
     justify-content: start;
     padding-right: 30px;
     font-weight: 800;
-    font-size: 30px;
-    color: rgb(252, 237, 33);
+    font-size: 50px;
+    color: var(--rama1);
 }
 
 .imgBanner {
@@ -143,20 +170,21 @@ section {
     gap: 20px;
     grid-template-columns: 1fr 4fr;
     grid-template-areas:
-    "aside containerA containerA containerA"
-    "aside containerA containerA containerA"
-    "aside containerA containerA containerA";
-}
+    "aside containerA containerA containerA containerA"
+    "aside containerA containerA containerA containerA"
+    "aside containerA containerA containerA containerA";
+}   
 
 aside {
     grid-area: "aside";
 }
-.menu p {
-    padding-top: 20px;
-}
 
 #searchBar {
-    color: black;
+    color: var(--ramablack);
+}
+
+.menu p {
+    padding-top: 20px;
 }
 
 .containerA {
@@ -172,22 +200,21 @@ aside {
 }
 
 .card {
-    color: black;
-    width: 25%;
+    color: var(--ramablack);
+    width: 20%;
     padding: 20px 10px;
     border: 1px solid grey;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--ramawhite);
     opacity: 0.9;
 }
-
 
 .cardTitle {
     display: block;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: black;
+    color: var(--ramablack);
     text-align: center;
 }
 
@@ -196,7 +223,7 @@ aside {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: black;
+    color: var(--ramablack);
     text-align: center;
 }
 
@@ -205,11 +232,10 @@ aside {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: black;
+    color: var(--ramablack);
     text-align: center;
     font-weight: 700;
 }
-
 
 .cardImg {
     max-width: 80%;
@@ -220,14 +246,20 @@ aside {
     margin-bottom: 10px;
 }
 
+.cartPNG {
+    height: auto;
+    width: 100px;
+    align-self: top;
+}
+
 .cardButton {
-    color: black;
+    color: var(--ramablack);
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
     border-color: transparent;
-    background-color: rgb(252, 237, 33);
+    background-color: var(--rama1);
     align-items: center;
 }
 
@@ -236,16 +268,12 @@ aside {
     transition: all 0.5s;
 }
 
-#contadorCarrito {
-    color: black;
-}
-
 button p {
     display: block;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: black;
+    color: var(--ramablack);
     text-align: center;
     font-weight: 400;
     align-self: center;
@@ -256,7 +284,7 @@ button p {
 
 #filtros {
     margin-top: 10px;
-    color: black;
+    color: var(--ramablack);
 }
 
 footer {
@@ -269,7 +297,7 @@ footer {
     width: 100%;
     height: 2.5rem;
     left: 0px;
-    color: white;
+    color: var(--ramawhite);
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -279,8 +307,89 @@ footer {
 }
 
 
+.guitarraEnCarrito{
+    display: flex;
+    flex-flow: row;
+    background-color: var(--ramawhite);
+    justify-content: space-between;
+    align-items: center;
+}
+.ordenCarrito{
+    display: flex;
+    flex-flow: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button {
+    color: var(--ramablack);
+    margin: 10px;
+}
+#filtroColor {
+    color: var(--ramablack);
+    margin-bottom: 5px;
+}
+.filtroColor__Option {
+    color: var(--ramablack);
+}
 
 
+.carritoTitle {
+    color: var(--rama1);
+    font-size: 40px;
+}
+
+.cardTitleCarrito {
+    color: var(--ramablack);
+}
+
+.cardInfoCarrito {
+    color: var(--ramablack);
+
+}
+
+#cantidad {
+    color: var(--ramablack);
+
+}
+
+.bottonEliminar {
+    color: var(--ramablack);
+
+}
+
+.precioProducto {
+    color: var(--ramablack);
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+#precioTotal {
+    color: var(--ramablack);
+}
+
+.botonAgregarA {
+    color: var(--ramablack);
+    font-weight: bolder;
+    border: transparent;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: rgb(138, 138, 138);
+
+
+
+}
+
+.botonAgregarB {
+    color: var(--ramablack);
+    background-color: var(--rama1);
+    border: transparent;
+    border-radius: 20px;
+    font-weight: bolder;
+    padding: 15px;
+
+}
 
 
 
@@ -297,7 +406,8 @@ footer {
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -313,7 +423,8 @@ footer {
 
 .modal-carrito {
     position: relative;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     min-width: 500px;
     padding: 20px;
     margin-top: -100%;
@@ -326,6 +437,8 @@ footer {
 
 .modal-carrito h3 {
     color: royalblue;
+    color: #000000;
+
     padding-bottom: 5px;
 }
 .modal-carrito #carritoCerrar {
@@ -335,7 +448,9 @@ footer {
     font-size: 20px;
     color: royalblue;
     border: none;
-    background-color: white;
+    background-color: rgb(31, 31, 31);
+    color: #000000;
+
 }
 .modal-carrito #carritoCerrar:hover {
     cursor: pointer;

@@ -30,18 +30,16 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     </head>
     <body>
-        <!-- Arreglar Carrito -->
         <nav>
             <div>
                 <a href="./index.html" id="logo">GuitarWorld</a>
             </div>
-            <div class="">
+            <div>
                 <ul>
                     <li><a href="./index.html">Productos</a></li>
                     <li><a href="./pages/gps.html">Información</a></li>
                     <li><a href="./pages/contacto.html">Contacto</a></li>
-                    <li><button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button></li>
-                    <!-- <li><button id="boxCart"> <i class="fas fa-shopping-cart"> <span id="contadorCarrito"> 0</span></i></button> </li> -->
+                    <li><button id="botonCarrito" class="boxCart"><img src="./image/Cart.png" alt="" class="boxIMG"><span id="contadorCarrito">0</span></button></li>
                 </ul>
             </div>
         </nav>
@@ -56,56 +54,44 @@
 
         <section class="containerAll">
             <aside>
+                <h2 class="carritoTitle">Filtros</h2>
                 <div class="menu">
                     <div class="searchBox">
                         <input type="text" name="searchBar" id="searchBar">
                         <button id="searchButton" title="Buscar"> &#128270; </button>
                     </div>
-                    <p>En el corazón de Santiago, somos un lugar boutique de música y una compañía de entretenimiento. Llevamos más de 30 años tocando música y hemos tenido la suerte de actuar en algunos de los mejores eventos y sesiones. No somos un lugar de música ordinario, somos una empresa única de eventos y entretenimiento que atiende a todo público musical.</p>
                 </div>
-                <div id="filtros">
-                    <select id="filtroTalle">
-                        <option value="all">Todos</option>
-                        <option value="L">Large</option>
-                        <option value="M">Medium</option>
-                        <option value="S">Small</option>
+                <div id="Color">
+                    <select id="filtroColor">
+                        <option class="filtroColor__Option" value="all">Color</option>
+                        <option class="filtroColor__Option" value="all">Todos</option>
+                        <option class="filtroColor__Option" value="Negro">Negro</option>
+                        <option class="filtroColor__Option" value="Gris">Gris</option>
+                        <option class="filtroColor__Option" value="Rojo">Rojo</option>
                     </select>
+                </div>
+                <div>
+                    <p>En el corazón de Santiago, somos un lugar boutique de música y una compañía de entretenimiento. Llevamos más de 30 años tocando música y hemos tenido la suerte de actuar en algunos de los mejores eventos y sesiones. No somos un lugar de música ordinario, somos una empresa única de eventos y entretenimiento que atiende a todo público musical.</p>
                 </div>
             </aside>
 
             <div class="containerA">
                 <div id="gridProductos">
-                    <!-- Guitarras -->
                 </div>
             </div>
         </section>
 
-        <div class="contenedor">
-            <div class="carrito">
-                <h2>Carrito</h2>
+        <div class="modal-contenedor">
+            <div class="modal-carrito">
+                <h2 class="carritoTitle">Carrito</h2>
                 <button id="carritoCerrar"></button>
                 <div id="carritoContenedor">
                 </div>
                 <p class="precioProducto">Precio total: $ <span id="precioTotal">0</span></p>
-                <button id="vaciarCarrito" class="botonAgregar">Vaciar Carrito</button>
+                <button id="vaciarCarrito" class="botonAgregarA">Vaciar Carrito</button> 
+                <button id="realizarCompra" class="botonAgregarB">Comprar</button>
             </div>
         </div>
-
-
-        <!-- ! arreglar -->
-        <div class="modal-contenedor">
-            <div class="modal-carrito">
-                <h3>Carrito</h3>
-                <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
-                <div id="carritoContenedor">
-                    <!-- Modal  -->
-                </div>
-                <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
-                <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
-            </div>
-        </div>
-
-
 
         <footer>
             <p>4ta Entrega Curso Javascript Coderhouse | Javier Ramírez - 8/12/2022 ;)</p>
@@ -114,13 +100,10 @@
         <!-- Librerias -->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-        <script src="./js/modal.js"></script>
-
+        
         <!-- Scripts -->
+        <script src="./js/modal.js"></script>
         <script src="./js/sweetAlert1.js"></script>
-        <!-- <script src="./js/data.js"></script> -->
         <script src="./js/main.js"></script>
-
-
     </body>
 </html>

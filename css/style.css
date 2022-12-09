@@ -339,6 +339,15 @@ button {
     font-size: 40px;
 }
 
+.carritoTitle2 {
+    color: var(--rama1);
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
 .cardTitleCarrito {
     color: var(--ramablack);
 }
@@ -391,9 +400,42 @@ button {
 
 }
 
+.botonInformacion {
+    color: var(--ramablack);
+}
 
+/* ------------------- */
 
+.pageContacto {
+    display: flex;
+    flex-flow: row ;
+    height: auto;
+    justify-content: center;
+}
 
+.pageContactoHeader {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-left: 300px;
+    padding-right: 300px;
+    color: #000000;
+}
+input {
+    color: var(--ramablack);
+    margin-bottom: 10px;
+}
+
+.articleInformacion {
+    /* width: 50%; */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 
 

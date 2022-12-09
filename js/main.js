@@ -117,7 +117,7 @@ botonComprar.addEventListener('click', () => {
       
       swalWithBootstrapButtons.fire({
         title: 'Quieres confirmar tu compra?',
-        text: "You won't be able to revert this!",
+        text: "Estas a punto de realizar tu compra por medio de GuitarWorld",
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: 'Realizar compra',

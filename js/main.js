@@ -15,33 +15,7 @@ const precioTotal = document.querySelector('#precioTotal')
 const cantidadTotal = document.querySelector('#cantidadTotal')
 const cantidad = document.querySelector('#cantidad')
 const boton = document.querySelector(`.cardButton`)
-
-// const allFilterItems = document.querySelectorAll('.filter-item')
 const filterBtns = document.querySelectorAll('.filter-btn')
-
-// allFilterBtns.forEach((btn) => {
-//   btn.addEventListener('click', () => {
-//     showFilteredContent
-//   })
-// })
-
-// const showFilteredContent = (btn) => {
-//   allFilterItems.forEach((item) => {
-//     if (item.classList.contains(btn.id)) {
-//       resetActiveBtn()
-//       btn.classList.add('active-btn')
-//       item.style.display = 'block'
-//     } else {
-//       item.style.display = 'none'
-//     }
-//   })
-// }
-
-// const resetActiveBtn = () => {
-//   allFilterBtns.forEach(() => {
-//     btn.classList.remove('active-btn')
-//   })
-// }
 
 filterBtns.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
@@ -50,6 +24,9 @@ filterBtns.forEach(function (btn) {
       return colorItem.color == category
     })
     console.log(seleccionColores);
+    gridProductos.innerHTML = ""
+    dataGuitarras = seleccionColores
+    renderizarProductos()
   })
 })
 
@@ -187,17 +164,3 @@ const traerGuitarras = async () => {
 actualizarCarrito()
 traerGuitarras()
 
-
-
-//! Filtros 
-
-//! Buscador
-const inputChange = document.querySelector('#searchBar')
-inputChange.addEventListener('çhange', (e) => {
-    console.log(e.value);
-})
-
-const searchButtonJS = document.querySelector('#searchButton')
-searchButton.addEventListener('click', () => {
-    console.log(inputChange.value)
-})

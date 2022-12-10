@@ -39,7 +39,7 @@
         "precio": 499990,
         "imgSrc": "../image/guitarStock/CR250-VB_Les_Paul_HH.webp",
         "tipo": "Eléctrica",
-        "color": "Negra",
+        "color": "Negro",
         "link": "https://www.casamarilla.cl/guitarra-electrica-cort-cr250-vb-les-paul-hh-jatoba-/p",
         "cantidad": 1
     },
@@ -61,7 +61,7 @@
         "precio": 1449990,
         "imgSrc": "../image/guitarStock/7FC.webp",
         "tipo": "Acustica",
-        "color": "Madera",
+        "color": "Amarillo",
         "link": "https://www.casamarilla.cl/guitarra-clasica-alhambra-7-fc-concierto/p",
         "cantidad": 1
     },
@@ -72,7 +72,7 @@
         "precio": 159990,
         "imgSrc": "../image/guitarStock/PC13_CEQ_Standard.png",
         "tipo": "Electroacustica",
-        "color": "Amarilla",
+        "color": "Amarillo",
         "link": "https://www.casamarilla.cl/guitarra-electroacustica-palmer-pc-13-ceq-standard/p?skuId=581",
         "cantidad": 1
     },
@@ -83,7 +83,7 @@
         "precio": 189990,
         "imgSrc": "../image/guitarStock/PF23.png",
         "tipo": "Electroacustica",
-        "color": "Roja",
+        "color": "Rojo",
         "link": "https://www.casamarilla.cl/guitarra-electroacustica-palmer-pf-23-ceq-marquis/p?skuId=589",
         "cantidad": 1
     }

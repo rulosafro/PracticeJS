@@ -16,11 +16,52 @@ const cantidadTotal = document.querySelector('#cantidadTotal')
 const cantidad = document.querySelector('#cantidad')
 const boton = document.querySelector(`.cardButton`)
 
+// const allFilterItems = document.querySelectorAll('.filter-item')
+const filterBtns = document.querySelectorAll('.filter-btn')
+
+// allFilterBtns.forEach((btn) => {
+//   btn.addEventListener('click', () => {
+//     showFilteredContent
+//   })
+// })
+
+// const showFilteredContent = (btn) => {
+//   allFilterItems.forEach((item) => {
+//     if (item.classList.contains(btn.id)) {
+//       resetActiveBtn()
+//       btn.classList.add('active-btn')
+//       item.style.display = 'block'
+//     } else {
+//       item.style.display = 'none'
+//     }
+//   })
+// }
+
+// const resetActiveBtn = () => {
+//   allFilterBtns.forEach(() => {
+//     btn.classList.remove('active-btn')
+//   })
+// }
+
+filterBtns.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    const category = e.currentTarget.id
+    const seleccionColores = dataGuitarras.filter((colorItem) => {
+      return colorItem.color == category
+    })
+    console.log(seleccionColores);
+    console.log(dataGuitarras);
+    renderizarProductos()
+  })
+})
+
+
+
 //* Funciones
 const renderizarProductos = () => {
     dataGuitarras.forEach((guitarra) => {
         const nuevaCard = document.createElement('div') 
-        nuevaCard.className = 'card'
+        nuevaCard.className = 'card filter-item'
         nuevaCard.innerHTML = `
             <img src="${guitarra.imgSrc}" class="cardImg">
             <h2 class="cardTitle"> ${guitarra.marca} </h2>

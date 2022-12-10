@@ -50,8 +50,6 @@ filterBtns.forEach(function (btn) {
       return colorItem.color == category
     })
     console.log(seleccionColores);
-    console.log(dataGuitarras);
-    renderizarProductos()
   })
 })
 
